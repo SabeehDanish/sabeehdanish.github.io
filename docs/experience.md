@@ -7,7 +7,7 @@
     <div class="timeline-header">
       <span class="timeline-org">INTOCHARGE</span>
       <span class="timeline-role">- Sustainable Energy Infrastructure Design Intern</span>
-      <span class="timeline-dates">Jan 2025 – <strong class="text-accent">Present</strong></span>
+      <span class="timeline-dates">Jan 2026 – <strong class="text-accent">Present</strong></span>
     </div>
     <div class="timeline-meta">Toronto, ON • Internship</div>
     <div class="timeline-desc">Working on the design and development of sustainable energy infrastructure, with a focus on autonomous systems and charging solutions. Collaborating closely with engineers to translate high-level concepts into practical, testable designs under real-world constraints such as performance, safety, and timelines.</div>
