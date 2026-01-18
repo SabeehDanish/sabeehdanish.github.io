@@ -316,31 +316,48 @@ class MarkdownLoader {
                             const projectItems = document.querySelectorAll('.project-item');
                             projectItems.forEach(item => {
                                 const header = item.querySelector('.project-header');
+                                const closeButton = item.querySelector('.project-close-button');
+                                
+                                // Function to toggle project
+                                const toggleProject = (shouldClose = false) => {
+                                    const isActive = item.classList.contains('active');
+                                    // Pause videos in all items when toggling
+                                    document.querySelectorAll('.project-item video').forEach(v => { v.pause(); });
+                                    // Close all other items
+                                    document.querySelectorAll('.project-item').forEach(otherItem => {
+                                        if (otherItem !== item) {
+                                            otherItem.classList.remove('active');
+                                            var v = otherItem.querySelector('video');
+                                            if (v) v.pause();
+                                        }
+                                    });
+                                    // Toggle current item
+                                    if (shouldClose || isActive) {
+                                        item.classList.remove('active');
+                                    } else {
+                                        item.classList.add('active');
+                                        var video = item.querySelector('video');
+                                        if (video) {
+                                            video.muted = true;
+                                            video.play().catch(function(){});
+                                        }
+                                    }
+                                };
+                                
+                                // Add click handler to header
                                 if (header && !header.dataset.listenerAdded) {
                                     header.dataset.listenerAdded = 'true';
                                     header.addEventListener('click', () => {
-                                        const isActive = item.classList.contains('active');
-                                        // Pause videos in all items when toggling
-                                        document.querySelectorAll('.project-item video').forEach(v => { v.pause(); });
-                                        // Close all other items
-                                        document.querySelectorAll('.project-item').forEach(otherItem => {
-                                            if (otherItem !== item) {
-                                                otherItem.classList.remove('active');
-                                                var v = otherItem.querySelector('video');
-                                                if (v) v.pause();
-                                            }
-                                        });
-                                        // Toggle current item
-                                        if (isActive) {
-                                            item.classList.remove('active');
-                                        } else {
-                                            item.classList.add('active');
-                                            var video = item.querySelector('video');
-                                            if (video) {
-                                                video.muted = true;
-                                                video.play().catch(function(){});
-                                            }
-                                        }
+                                        toggleProject();
+                                    });
+                                }
+                                
+                                // Add click handler to close button
+                                if (closeButton && !closeButton.dataset.listenerAdded) {
+                                    closeButton.dataset.listenerAdded = 'true';
+                                    closeButton.addEventListener('click', (e) => {
+                                        e.stopPropagation(); // Prevent header click
+                                        toggleProject(true);
                                     });
                                 }
                             });

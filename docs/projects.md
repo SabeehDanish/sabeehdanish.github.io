@@ -17,10 +17,13 @@
       <img src="assets/solidworksteng.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
     </div>
     <div class="project-media-container">
-      <video src="assets/TENG Project.mp4" muted playsinline loop preload="metadata" class="project-video" aria-label="Project demo"></video>
+      <video src="assets/TENG Project.mp4" muted playsinline loop preload="metadata" class="project-video teng-video" aria-label="Project demo"></video>
     </div>
     <div class="project-skills">
       <span class="tag tag-interpretability">AutoCAD</span>
+    </div>
+    <div class="project-close-button-container">
+      <button class="project-close-button" aria-label="Close project">−</button>
     </div>
   </div>
 </div>
@@ -36,8 +39,14 @@
     <div class="project-media-container">
       <img src="assets/profile.jpg" alt="Project screenshot" class="project-image" />
     </div>
+    <div class="project-media-container">
+      <video src="assets/Curve-Fitting-Application-Project.mp4" muted playsinline loop preload="metadata" class="project-video" aria-label="Project demo"></video>
+    </div>
     <div class="project-skills">
       <span class="tag tag-interpretability">Python</span>
+    </div>
+    <div class="project-close-button-container">
+      <button class="project-close-button" aria-label="Close project">−</button>
     </div>
   </div>
 </div>
@@ -57,6 +66,9 @@
       <span class="tag tag-safety">Javascript</span>
       <span class="tag tag-interpretability">MongoDB</span>
       <span class="tag tag-arxiv">Express</span>
+    </div>
+    <div class="project-close-button-container">
+      <button class="project-close-button" aria-label="Close project">−</button>
     </div>
   </div>
 </div>
