@@ -1,32 +1,25 @@
-# Portfolio
+# Portfolio Website
 
-My personal portfolio website showcasing research in AI Safety and Machine Learning.
+Personal portfolio website for Sabeeh Danish.
 
-**Live site:** [jrosser.co.uk](https://jrosseruk.github.io)
+## Files
 
-## Preview
+- `docs/index.html` - Main website page
+- `docs/about.md` - About section content
+- `docs/publications.md` - Publications section content
+- `docs/projects.md` - Projects section content
+- `docs/styles.css` - Website styling
+- `docs/script.js` - Website functionality
+- `docs/assets/` - Images and icons
 
-![Portfolio Screenshot](docs/assets/screenshot.png)
+## GitHub Pages Setup
 
+To host this website on GitHub Pages:
 
-## Tech Stack
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the left sidebar
+3. Under "Source", select "Deploy from a branch"
+4. Choose "main" branch and "/docs" folder
+5. Click Save
 
-- Vanilla HTML, CSS, JavaScript
-- Markdown content
-- GitHub Pages hosting
-
-## Development
-
-```bash
-# Serve locally
-python -m http.server 8000 -d docs/
-```
-
-## Structure
-
-- `docs/index.html` - Main page
-- `docs/*.md` - Content (about, publications, resume)
-- `docs/styles.css` - Styling
-- `docs/script.js` - Functionality
-
-Inspired by [astro-theme-cactus](https://astro-cactus.chriswilliams.dev/) :)
+Your website will be available at: `https://yourusername.github.io/Portfolio-Website/`

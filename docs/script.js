@@ -260,7 +260,7 @@ class LazyImageLoader {
 // Markdown content loader
 class MarkdownLoader {
     constructor() {
-        this.sections = ['about', 'news', 'publications', 'projects'];
+        this.sections = ['about', 'publications', 'projects'];
         this.init();
     }
 
@@ -286,7 +286,6 @@ class MarkdownLoader {
         
         for (const fullPath of pathsToTry) {
             try {
-                console.log(`Trying to fetch: ${fullPath}`);
                 const response = await fetch(fullPath);
                 if (response.ok) {
                     const markdown = await response.text();
@@ -296,7 +295,6 @@ class MarkdownLoader {
                     if (typeof window.applyBHoverEffect === 'function') {
                         window.applyBHoverEffect(contentElement);
                     }
-                    console.log(`Successfully loaded ${section} from: ${fullPath}`);
                     return; // Success, exit early
                 } else {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -309,8 +307,6 @@ class MarkdownLoader {
         }
 
         // If we get here, all paths failed
-        console.error(`Error loading ${section} content - all paths failed:`, lastError);
-        console.log(`Current location: ${window.location.href}`);
         contentElement.innerHTML = `
             <div class="error-message">
                 <p>Sorry, unable to load ${section} content at this time.</p>
@@ -500,10 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add loading state management
     document.body.classList.add('loaded');
     
-    // Console message for developers
-    console.log('🌵 Portfolio site loaded successfully!');
-    console.log('🎉 Click the logo for a party surprise!');
-    console.log('Built with inspiration from astro-theme-cactus');
+    // Site loaded
 });
 
 // Handle page visibility changes (pause animations when not visible)
