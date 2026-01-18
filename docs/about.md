@@ -25,6 +25,6 @@ What excites me most is building and improving real systems. I enjoy taking vagu
 
 Outside of formal projects, I’m a PC enthusiast who enjoys optimizing systems, troubleshooting edge cases, and understanding how individual components interact to shape overall performance. That same curiosity shapes how I approach engineering: I like digging into details, iterating deliberately, and learning by doing.
 
-I’m actively seeking internship and co-op opportunities where I can contribute meaningfully, grow alongside experienced engineers, and work on problems that matter — while continuing to develop into the engineer I’ve wanted to be since I was a kid.
+I’m actively seeking internship and co-op opportunities where I can contribute meaningfully, grow alongside experienced engineers, and work on problems that matter, while continuing to develop into the engineer I’ve wanted to be since I was a kid.
 
 **Feel free to connect with me!**

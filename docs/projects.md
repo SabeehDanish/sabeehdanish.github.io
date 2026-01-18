@@ -5,16 +5,16 @@
 <div class="project-item" data-project="0">
   <div class="project-header">
     <span class="project-number">01</span>
-    <h3 class="project-title">Purchase Order Generator</h3>
+    <h3 class="project-title">Triboelectric Nanogenerator</h3>
     <span class="project-toggle">+</span>
   </div>
   <div class="project-content">
-    <p class="project-description">An internal automation tool that generates official purchase orders (POs) from purchase requests for equipment and services. The program parses request data, identifies the vendor and key metadata, and automatically populates EGATE’s internal PO template to produce a finalized purchase order.</p>
+    <p class="project-description">Designed and developed a triboelectric nanogenerator to convert mechanical motion into electrical energy through optimized structural design. Modeled and fabricated custom TENG components using SolidWorks and 3D printing, iterating on geometry and material interfaces to improve durability and performance. Structural optimizations resulted in a 25% increase in voltage output, demonstrating the impact of design-driven efficiency improvements in energy harvesting systems.</p>
     <div class="project-media-container">
-      <video src="assets/TENG Project.MOV" muted playsinline loop preload="metadata" class="project-video" aria-label="Project demo"></video>
+      <video src="assets/TENG Project.mp4" muted playsinline loop preload="metadata" class="project-video" aria-label="Project demo"></video>
     </div>
     <div class="project-skills">
-      <span class="tag tag-interpretability">Python</span>
+      <span class="tag tag-interpretability">AutoCAD</span>
     </div>
   </div>
 </div>
