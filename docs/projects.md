@@ -37,9 +37,6 @@
   <div class="project-content">
     <p class="project-description">The Interactive Curve Fitting Application is a Python-based tool developed using the Streamlit framework. It allows users to explore and analyze datasets by fitting them to various mathematical models and evaluating their accuracy using statistical metrics. The application is user-friendly, making it ideal for students, researchers, and professionals working with data analysis and predictive modeling.</p>
     <div class="project-media-container">
-      <img src="assets/profile.jpg" alt="Project screenshot" class="project-image" />
-    </div>
-    <div class="project-media-container">
       <video src="assets/Curve-Fitting-Application-Project.mp4" muted playsinline loop preload="metadata" class="project-video" aria-label="Project demo"></video>
     </div>
     <div class="project-skills">
@@ -51,26 +48,5 @@
   </div>
 </div>
 
-<div class="project-item" data-project="2">
-  <div class="project-header">
-    <span class="project-number">03</span>
-    <h3 class="project-title">Adam's Awakening</h3>
-    <span class="project-toggle">+</span>
-  </div>
-  <div class="project-content">
-    <p class="project-description">A project fueled by my passion for gaming. Inspired by the original NES title: The Legend of Zelda: Link's Awakening</p>
-    <div class="project-media-container">
-      <img src="assets/profile.jpg" alt="Project screenshot" class="project-image" />
-    </div>
-    <div class="project-skills">
-      <span class="tag tag-safety">Javascript</span>
-      <span class="tag tag-interpretability">MongoDB</span>
-      <span class="tag tag-arxiv">Express</span>
-    </div>
-    <div class="project-close-button-container">
-      <button class="project-close-button" aria-label="Close project">−</button>
-    </div>
-  </div>
-</div>
 
 </div>
