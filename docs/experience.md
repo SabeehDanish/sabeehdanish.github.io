@@ -6,7 +6,7 @@
     <span class="timeline-dot"></span>
     <div class="timeline-header">
       <span class="timeline-org">INTOCHARGE</span>
-      <span class="timeline-role">Sustainable Energy Infrastructure Design Intern</span>
+      <span class="timeline-role">- Sustainable Energy Infrastructure Design Intern</span>
       <span class="timeline-dates">Jan 2025 – <strong class="text-accent">Present</strong></span>
     </div>
     <div class="timeline-meta">Toronto, ON • Internship</div>
@@ -22,7 +22,7 @@
     <span class="timeline-dot"></span>
     <div class="timeline-header">
       <span class="timeline-org">EGATE Networks</span>
-      <span class="timeline-role">Business Development Specialist</span>
+      <span class="timeline-role">- Business Development Specialist</span>
       <span class="timeline-dates">Jun – Aug 2025</span>
     </div>
     <div class="timeline-meta">Remote</div>
@@ -32,12 +32,13 @@
         <span class="tag tag-interpretability">Automation</span>
         <span class="tag tag-arxiv">Systems Engineering</span>
     </div>
+  </div>
 
 <div class="timeline-item">
     <span class="timeline-dot"></span>
     <div class="timeline-header">
       <span class="timeline-org">Midnight Sun Solar Rayce Car Team</span>
-      <span class="timeline-role">Design Engineer</span>
+      <span class="timeline-role">- Design Engineer</span>
       <span class="timeline-dates">Sep 2024 – Apr 2025</span>
     </div>
     <div class="timeline-meta">Waterloo, ON • Student Design Team</div>
@@ -53,7 +54,7 @@
     <span class="timeline-dot"></span>
     <div class="timeline-header">
       <span class="timeline-org">Toronto Police Service</span>
-      <span class="timeline-role">Youth In Policing Initative</span>
+      <span class="timeline-role">- Youth In Policing Initative</span>
       <span class="timeline-dates">Jun – Aug 2024</span>
     </div>
     <div class="timeline-meta">Toronto, ON • Internship</div>

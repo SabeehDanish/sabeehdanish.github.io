@@ -19,12 +19,12 @@
   </div>
 </div>
 
-I’m a **Nanotechnology Engineering student @ the University of Waterloo** who likes understanding how things work all the way down. I’m the type of person who doesn’t stop at “it works”.I want to know why it works, how it could break, and how to make it better.
+I’m a **Nanotechnology Engineering student @ the University of Waterloo** who’s driven by understanding how systems work all the way down. I don’t stop at “it works”. I want to know why it works, how it could fail, and how to make it better.
 
-What excites me most is building and improving real systems. I enjoy taking vague or messy problems and turning them into something structured, whether that’s through software, engineering design, or automation. Being part of teams like **INTOCHARGE** has reinforced that I do my best work when theory meets reality — when designs have constraints, deadlines, and real consequences.
+What excites me most is building and improving real systems. I enjoy taking vague or messy problems and turning them into something structured and reliable, whether that’s through software, engineering design, or automation. Being part of teams like **INTOCHARGE** has reinforced that I do my best work where theory meets reality, when designs have constraints, deadlines, and real consequences.
 
-Outside of formal projects, I’m a PC enthusiast who genuinely enjoys optimizing systems, troubleshooting edge cases, and understanding how individual components interact to shape overall performance. That mindset carries directly into how I approach engineering problems: I like digging into details, iterating deliberately, and learning by doing.
+Outside of formal projects, I’m a PC enthusiast who enjoys optimizing systems, troubleshooting edge cases, and understanding how individual components interact to shape overall performance. That same curiosity shapes how I approach engineering: I like digging into details, iterating deliberately, and learning by doing.
 
-I’m actively looking for internship and co-op opportunities where I can contribute meaningfully, grow alongside experienced engineers, and work on problems that actually matter. I’m especially drawn to roles where I can combine technical depth with creative problem-solving and continue developing into the engineer I always dreamed of as a kid!
+I’m actively seeking internship and co-op opportunities where I can contribute meaningfully, grow alongside experienced engineers, and work on problems that matter — while continuing to develop into the engineer I’ve wanted to be since I was a kid.
 
 **Feel free to connect with me!**

@@ -5,18 +5,16 @@
 <div class="project-item" data-project="0">
   <div class="project-header">
     <span class="project-number">01</span>
-    <h3 class="project-title">Project Title One</h3>
+    <h3 class="project-title">Purchase Order Generator</h3>
     <span class="project-toggle">+</span>
   </div>
   <div class="project-content">
-    <p class="project-description">This is a detailed description of the project. It explains what the project does, what technologies were used, and what problems it solves.</p>
+    <p class="project-description">An internal automation tool that generates official purchase orders (POs) from purchase requests for equipment and services. The program parses request data, identifies the vendor and key metadata, and automatically populates EGATE’s internal PO template to produce a finalized purchase order.</p>
     <div class="project-image-container">
       <img src="assets/profile.jpg" alt="Project screenshot" class="project-image" />
     </div>
     <div class="project-skills">
-      <span class="tag tag-safety">React</span>
-      <span class="tag tag-interpretability">Node.js</span>
-      <span class="tag tag-arxiv">Python</span>
+      <span class="tag tag-interpretability">Python</span>
     </div>
   </div>
 </div>
@@ -24,18 +22,16 @@
 <div class="project-item" data-project="1">
   <div class="project-header">
     <span class="project-number">02</span>
-    <h3 class="project-title">Project Title Two</h3>
+    <h3 class="project-title">Streamlit Curve Fitting Application</h3>
     <span class="project-toggle">+</span>
   </div>
   <div class="project-content">
-    <p class="project-description">Another project description that showcases different technologies and approaches. This demonstrates versatility in development.</p>
+    <p class="project-description">The Interactive Curve Fitting Application is a Python-based tool developed using the Streamlit framework. It allows users to explore and analyze datasets by fitting them to various mathematical models and evaluating their accuracy using statistical metrics. The application is user-friendly, making it ideal for students, researchers, and professionals working with data analysis and predictive modeling.</p>
     <div class="project-image-container">
       <img src="assets/profile.jpg" alt="Project screenshot" class="project-image" />
     </div>
     <div class="project-skills">
-      <span class="tag tag-safety">JavaScript</span>
-      <span class="tag tag-interpretability">CSS</span>
-      <span class="tag tag-arxiv">HTML</span>
+      <span class="tag tag-interpretability">Python</span>
     </div>
   </div>
 </div>
@@ -43,16 +39,16 @@
 <div class="project-item" data-project="2">
   <div class="project-header">
     <span class="project-number">03</span>
-    <h3 class="project-title">Project Title Three</h3>
+    <h3 class="project-title">Adam's Awakening</h3>
     <span class="project-toggle">+</span>
   </div>
   <div class="project-content">
-    <p class="project-description">A third project that highlights additional skills and experiences. This could be a mobile app, web service, or other technical project.</p>
+    <p class="project-description">A project fueled by my passion for gaming. Inspired by the original NES title: The Legend of Zelda: Link's Awakening</p>
     <div class="project-image-container">
       <img src="assets/profile.jpg" alt="Project screenshot" class="project-image" />
     </div>
     <div class="project-skills">
-      <span class="tag tag-safety">TypeScript</span>
+      <span class="tag tag-safety">Javascript</span>
       <span class="tag tag-interpretability">MongoDB</span>
       <span class="tag tag-arxiv">Express</span>
     </div>
