@@ -712,8 +712,25 @@ html * {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     background: var(--color-border);
+}
+
+.concept-sketch-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+.project-item.active .concept-sketch-label {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-skills {

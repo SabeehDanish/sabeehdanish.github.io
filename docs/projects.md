@@ -11,6 +11,10 @@
   <div class="project-content">
     <p class="project-description">Designed and developed a triboelectric nanogenerator to convert mechanical motion into electrical energy through optimized structural design. Modeled and fabricated custom TENG components using SolidWorks and 3D printing, iterating on geometry and material interfaces to improve durability and performance. Structural optimizations resulted in a 25% increase in voltage output, demonstrating the impact of design-driven efficiency improvements in energy harvesting systems.</p>
     <div class="project-media-container">
+      <p class="concept-sketch-label">Concept Sketch</p>
+      <img src="assets/conceptdrawing.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
+    </div>
+    <div class="project-media-container">
       <video src="assets/TENG Project.mp4" muted playsinline loop preload="metadata" class="project-video" aria-label="Project demo"></video>
     </div>
     <div class="project-skills">
