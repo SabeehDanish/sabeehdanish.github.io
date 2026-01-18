@@ -341,6 +341,21 @@ class MarkdownLoader {
                                             video.muted = true;
                                             video.play().catch(function(){});
                                         }
+                                        
+                                        // Smooth scroll to show the opened project header
+                                        setTimeout(() => {
+                                            const header = document.getElementById('main-header');
+                                            const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
+                                            const extraMargin = 16; // Extra spacing below header
+                                            const itemRect = item.getBoundingClientRect();
+                                            const itemTop = window.pageYOffset + itemRect.top;
+                                            const targetPosition = itemTop - headerHeight - extraMargin;
+                                            
+                                            window.scrollTo({
+                                                top: targetPosition,
+                                                behavior: 'smooth'
+                                            });
+                                        }, 50); // Small delay to ensure the item is expanded
                                     }
                                 };
                                 
