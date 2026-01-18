@@ -25,7 +25,7 @@
       <span class="timeline-role">- Business Development Specialist</span>
       <span class="timeline-dates">Jun – Aug 2025</span>
     </div>
-    <div class="timeline-meta">Remote</div>
+    <div class="timeline-meta">Toronto, ON • Internship</div>
     <div class="timeline-desc">Supported internal operations and process automation by building tools that streamlined workflows and improved efficiency. Gained experience working across technical and non-technical teams while translating real business needs into structured, reliable solutions.</div>
     <div class="publication-tags" style="margin-top: 0.75rem;">
         <span class="tag tag-safety">Systems Design</span>
@@ -61,8 +61,8 @@
     <div class="timeline-desc">Worked within a professional public-sector environment, supporting operational initiatives and community-focused projects. Developed strong communication, responsibility, and teamwork skills while gaining exposure to structured, real-world organizational systems.</div>
     <div class="publication-tags" style="margin-top: 0.75rem;">
         <span class="tag tag-safety">Information Systems</span>
-        <span class="tag tag-interpretability">Data Science</span>
         <span class="tag tag-arxiv">Process Documentation</span>
+        <span class="tag tag-interpretability">Data Science</span>
     </div>
   </div>
     
