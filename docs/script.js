@@ -1,52 +1,67 @@
-// Theme management
-class ThemeManager {
-    constructor() {
-        this.theme = localStorage.getItem('theme') || 'light';
-        this.init();
-    }
-
-    init() {
-        // Set initial theme
-        this.setTheme(this.theme);
-        
-        // Add event listener to theme toggle button
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => this.toggleTheme());
+// Theme management with emoji toggle and slower transition
+(function() {
+    // Initialize theme immediately to avoid flash
+    (function() {
+        try {
+            var saved = localStorage.getItem('theme');
+            var theme = saved === 'dark' || saved === 'light' ? saved : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+            document.documentElement.setAttribute('data-theme', 'light');
         }
-    }
+    })();
 
-    setTheme(theme) {
-        this.theme = theme;
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        
-        // Update theme toggle button aria-label
+    // Wait for DOM to be ready
+    function initTheme() {
         const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-            themeToggle.setAttribute('aria-label', 
-                theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-            );
-            // Update icon visibility explicitly to avoid any flash
-            const sun = themeToggle.querySelector('.sun-icon');
-            const moon = themeToggle.querySelector('.moon-icon');
-            if (sun && moon) {
-                if (theme === 'dark') {
-                    sun.style.display = 'block';
-                    moon.style.display = 'none';
-                } else {
-                    sun.style.display = 'none';
-                    moon.style.display = 'block';
-                }
+        const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Update icon based on current theme
+        if (themeIcon) {
+            if (currentTheme === 'dark') {
+                themeIcon.textContent = '☀️';
+            } else {
+                themeIcon.textContent = '🌙';
             }
         }
+
+        // Toggle theme on button click with slower transition
+        if (themeToggle && themeIcon) {
+            themeToggle.addEventListener('click', function() {
+                const isDark = html.getAttribute('data-theme') === 'dark';
+                const newTheme = isDark ? 'light' : 'dark';
+                
+                // Update theme attribute
+                html.setAttribute('data-theme', newTheme);
+                
+                // Update icon and save preference
+                if (newTheme === 'dark') {
+                    themeIcon.textContent = '☀️';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    themeIcon.textContent = '🌙';
+                    localStorage.setItem('theme', 'light');
+                }
+                
+                // Update aria-label
+                themeToggle.setAttribute('aria-label', 
+                    newTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+                );
+            });
+        }
     }
 
-    toggleTheme() {
-        const newTheme = this.theme === 'light' ? 'dark' : 'light';
-        this.setTheme(newTheme);
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTheme);
+    } else {
+        initTheme();
     }
-}
+})();
 
 // Mobile navigation management
 class MobileNavigation {
@@ -260,7 +275,7 @@ class LazyImageLoader {
 // Markdown content loader
 class MarkdownLoader {
     constructor() {
-        this.sections = ['about', 'publications', 'projects'];
+        this.sections = ['about', 'experience', 'projects'];
         this.init();
     }
 
@@ -475,7 +490,7 @@ class MarkdownLoader {
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
-    new ThemeManager();
+    // Theme is initialized earlier in the script
     new MobileNavigation();
     new SmoothScroll();
     
