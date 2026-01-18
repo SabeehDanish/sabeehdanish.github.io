@@ -13,6 +13,8 @@
     <div class="project-media-container">
       <p class="concept-sketch-label">Concept Sketch</p>
       <img src="assets/conceptdrawing.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
+      <p class="3d-model-label">3D CAD Render (SolidWorks)</p>
+      <img src="assets/solidworksteng.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
     </div>
     <div class="project-media-container">
       <video src="assets/TENG Project.mp4" muted playsinline loop preload="metadata" class="project-video" aria-label="Project demo"></video>
