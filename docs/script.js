@@ -342,20 +342,27 @@ class MarkdownLoader {
                                             video.play().catch(function(){});
                                         }
                                         
-                                        // Smooth scroll to show the opened project header
+                                        // Smooth scroll to show the opened project header after dropdown opens
+                                        // Wait for the transition to progress before scrolling
                                         setTimeout(() => {
-                                            const header = document.getElementById('main-header');
-                                            const headerHeight = header ? Math.ceil(header.getBoundingClientRect().height) : 0;
-                                            const extraMargin = 16; // Extra spacing below header
+                                            const mainHeader = document.getElementById('main-header');
+                                            const headerHeight = mainHeader ? Math.ceil(mainHeader.getBoundingClientRect().height) : 0;
+                                            const extraMargin = 24; // Extra spacing below header for better visibility
+                                            
+                                            // Get the project item's position after it starts expanding
                                             const itemRect = item.getBoundingClientRect();
-                                            const itemTop = window.pageYOffset + itemRect.top;
+                                            const currentScrollY = window.pageYOffset || window.scrollY;
+                                            const itemTop = currentScrollY + itemRect.top;
+                                            
+                                            // Calculate target scroll position to show project header below fixed header
                                             const targetPosition = itemTop - headerHeight - extraMargin;
                                             
+                                            // Smooth scroll to show the project header
                                             window.scrollTo({
-                                                top: targetPosition,
+                                                top: Math.max(0, targetPosition),
                                                 behavior: 'smooth'
                                             });
-                                        }, 50); // Small delay to ensure the item is expanded
+                                        }, 300); // Wait for dropdown to start opening before scrolling
                                     }
                                 };
                                 
