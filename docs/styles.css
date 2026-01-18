@@ -435,23 +435,29 @@ html * {
 #toggle-navigation-menu[aria-expanded="true"]  svg:last-of-type  { display: block; opacity: 1; }
 
 /* Theme toggle styles - circular */
-#theme-toggle {
-    background-color: color-mix(in srgb, var(--color-accent-2) 20%, transparent);
-    border: 1px solid color-mix(in srgb, var(--color-accent-2) 30%, transparent);
+/* Theme toggle: circular only, circle outline on hover, no scaling */
+#theme-toggle,
+.theme-toggle-btn {
+    background: transparent;
+    border: 1px solid color-mix(in srgb, var(--color-accent-2) 35%, transparent);
     border-radius: 50%;
-    transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.3s ease;
-    z-index: 50;
-    position: relative;
+    width: 2.25rem;
+    height: 2.25rem;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+    z-index: 50;
+    position: relative;
+    flex-shrink: 0;
 }
 
 #theme-toggle:hover {
-    background-color: color-mix(in srgb, var(--color-accent-2) 30%, transparent);
-    transform: scale(1.1);
+    background-color: color-mix(in srgb, var(--color-accent-2) 12%, transparent);
+    border-color: var(--color-accent-2);
 }
 
 .theme-icon {
@@ -678,7 +684,8 @@ html * {
     animation: fadeInUp 0.5s ease 0.2s forwards;
 }
 
-.project-image-container {
+.project-image-container,
+.project-media-container {
     margin: 1.5rem 0;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -687,7 +694,8 @@ html * {
     transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
 }
 
-.project-item.active .project-image-container {
+.project-item.active .project-image-container,
+.project-item.active .project-media-container {
     opacity: 1;
     transform: translateY(0);
 }
@@ -697,6 +705,15 @@ html * {
     height: auto;
     object-fit: cover;
     display: block;
+}
+
+/* Project video: no controls, seamless, works on mobile */
+.project-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    background: var(--color-border);
 }
 
 .project-skills {
@@ -865,10 +882,17 @@ button:focus-visible {
     .header-title { display: flex; align-items: center; flex: 1; min-width: 0; }
     .header-nav { display: none; }
 
-    /* Adjust controls spacing on mobile */
+    /* Adjust controls spacing on mobile - prevent overlap */
     .header-controls {
-        gap: 0.5rem;
+        gap: 0.75rem;
         white-space: nowrap;
+        min-width: 0;
+    }
+    #theme-toggle {
+        flex-shrink: 0;
+    }
+    #toggle-navigation-menu {
+        flex-shrink: 0;
     }
 
     /* Add spacing after logo on mobile */
@@ -880,18 +904,25 @@ button:focus-visible {
         height: 24px;
     }
 
-    /* Larger touch targets */
-    #theme-toggle,
+    /* Larger touch targets, no overlap */
+    #theme-toggle {
+        width: 2.5rem;
+        height: 2.5rem;
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+    }
     #toggle-navigation-menu {
         min-width: 44px;
         min-height: 44px;
         padding: 0.5rem;
     }
     
-    /* Better touch feedback */
-    #toggle-navigation-menu:active,
-    #theme-toggle:active {
+    /* Better touch feedback - only menu scales to avoid circle distortion */
+    #toggle-navigation-menu:active {
         transform: scale(0.95);
+    }
+    #theme-toggle:active {
+        opacity: 0.9;
     }
     
     /* Improved header spacing on mobile */

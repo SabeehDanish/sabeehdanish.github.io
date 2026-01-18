@@ -310,7 +310,7 @@ class MarkdownLoader {
                     if (typeof window.applyBHoverEffect === 'function') {
                         window.applyBHoverEffect(contentElement);
                     }
-                    // Initialize projects accordion if projects section was loaded
+                    // Initialize projects accordion and video play-on-expand
                     if (section === 'projects') {
                         setTimeout(() => {
                             const projectItems = document.querySelectorAll('.project-item');
@@ -320,10 +320,14 @@ class MarkdownLoader {
                                     header.dataset.listenerAdded = 'true';
                                     header.addEventListener('click', () => {
                                         const isActive = item.classList.contains('active');
+                                        // Pause videos in all items when toggling
+                                        document.querySelectorAll('.project-item video').forEach(v => { v.pause(); });
                                         // Close all other items
                                         document.querySelectorAll('.project-item').forEach(otherItem => {
                                             if (otherItem !== item) {
                                                 otherItem.classList.remove('active');
+                                                var v = otherItem.querySelector('video');
+                                                if (v) v.pause();
                                             }
                                         });
                                         // Toggle current item
@@ -331,6 +335,11 @@ class MarkdownLoader {
                                             item.classList.remove('active');
                                         } else {
                                             item.classList.add('active');
+                                            var video = item.querySelector('video');
+                                            if (video) {
+                                                video.muted = true;
+                                                video.play().catch(function(){});
+                                            }
                                         }
                                     });
                                 }
