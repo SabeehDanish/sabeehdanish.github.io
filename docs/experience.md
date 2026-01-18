@@ -10,7 +10,7 @@
       <span class="timeline-dates">Jan 2025 – <strong class="text-accent">Present</strong></span>
     </div>
     <div class="timeline-meta">Toronto, ON • Internship</div>
-    <div class="timeline-desc">Working on the design and development of sustainable energy infrastructure, contributing to real-world projects focused on autonomous systems and charging solutions. Collaborated with engineers to translate high-level concepts into practical, testable designs under real constraints.</div>
+    <div class="timeline-desc">Working on the design and development of sustainable energy infrastructure, contributing to real-world projects focused on autonomous systems and charging solutions. Collaborating with engineers to translate high-level concepts into practical, testable designs under real constraints.</div>
     <div class="publication-tags" style="margin-top: 0.75rem;">
         <span class="tag tag-safety">Nanotechnology</span>
         <span class="tag tag-interpretability">Engineering</span>
