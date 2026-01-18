@@ -303,18 +303,13 @@ html * {
     transition: opacity 0.2s ease;
 }
 
-#main-header a[href="#"]:hover svg {
+.header-logo img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#main-header a[href="#"]:hover img {
     transform: scale(1.05);
-    transition: opacity 0.2s ease;
-}
-
-/* Make logo black and white - minimal color scheme */
-#main-header svg {
-    filter: grayscale(100%) brightness(0) invert(0);
-}
-
-[data-theme="dark"] #main-header svg {
-    filter: grayscale(100%) brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 #main-header a[href="#"]:focus-visible {
@@ -439,27 +434,31 @@ html * {
 #toggle-navigation-menu[aria-expanded="true"]  svg:first-of-type { display: none;  opacity: 0; }
 #toggle-navigation-menu[aria-expanded="true"]  svg:last-of-type  { display: block; opacity: 1; }
 
-/* Theme toggle styles */
+/* Theme toggle styles - circular */
 #theme-toggle {
     background-color: color-mix(in srgb, var(--color-accent-2) 20%, transparent);
     border: 1px solid color-mix(in srgb, var(--color-accent-2) 30%, transparent);
-    transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.2s ease;
+    border-radius: 50%;
+    transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.3s ease;
     z-index: 50;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
 }
 
 #theme-toggle:hover {
     background-color: color-mix(in srgb, var(--color-accent-2) 30%, transparent);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .theme-icon {
     font-size: 1.25rem;
     line-height: 1;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 #theme-toggle:hover .theme-icon {
@@ -578,60 +577,169 @@ html * {
     color: var(--color-quote);
 }
 
-/* Project grid */
-.project-grid {
-    display: grid;
-    gap: 2rem;
+/* Projects Accordion Section */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 
-@media (min-width: 768px) {
-    .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.project-item {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.project-item:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--color-shadow) 50%, transparent);
+}
+
+.project-item.active {
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 30px color-mix(in srgb, var(--color-shadow) 60%, transparent);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    gap: 1.5rem;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.project-item:hover .project-header,
+.project-item.active .project-header {
+    background-color: color-mix(in srgb, var(--color-accent-2) 5%, transparent);
+}
+
+.project-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    min-width: 2rem;
+}
+
+.project-title {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-accent-2);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.project-item:hover .project-title,
+.project-item.active .project-title {
+    color: var(--color-accent);
+}
+
+.project-toggle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-accent);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 1.5rem;
+    text-align: center;
+    line-height: 1;
+}
+
+.project-item.active .project-toggle {
+    transform: rotate(45deg);
+}
+
+.project-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
+    padding: 0 2rem;
+}
+
+.project-item.active .project-content {
+    max-height: 2000px;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.project-description {
+    color: var(--color-global-text);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.project-item.active .project-description {
+    animation: fadeInUp 0.5s ease 0.2s forwards;
+}
+
+.project-image-container {
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+.project-item.active .project-image-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.project-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.project-card {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    backdrop-filter: blur(8px);
-    transition: opacity 0.2s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--color-shadow);
-}
-
-.project-card h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: var(--color-accent-2);
-}
-
-.project-card p {
-    margin-bottom: 1.5rem;
-    color: var(--color-global-text);
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.project-links a {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--color-accent);
-    border-radius: 0.25rem;
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-}
-
-.project-links a:hover {
-    background-color: var(--color-accent);
-    color: var(--color-global-bg);
+/* Responsive adjustments for projects */
+@media (max-width: 640px) {
+    .project-header {
+        padding: 1.25rem 1.5rem;
+        gap: 1rem;
+    }
+    
+    .project-title {
+        font-size: 1.25rem;
+    }
+    
+    .project-number {
+        font-size: 0.75rem;
+        min-width: 1.75rem;
+    }
+    
+    .project-content {
+        padding: 0 1.5rem;
+    }
+    
+    .project-item.active .project-content {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
 }
 
 /* Contact links */
@@ -799,10 +907,16 @@ button:focus-visible {
     }
     
     /* Better logo visibility and size */
-    #main-header svg {
+    #main-header img {
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        height: 4rem !important; /* Increase from 3.5rem to 4rem */
-        width: 2.4rem !important;  /* Increase from 2.1rem to 2.4rem, maintaining aspect ratio */
+    }
+    
+    .header-logo img {
+        transition: transform 0.3s ease;
+    }
+    
+    .header-logo:hover img {
+        transform: scale(1.05);
     }
 }
 

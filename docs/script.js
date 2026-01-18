@@ -310,6 +310,33 @@ class MarkdownLoader {
                     if (typeof window.applyBHoverEffect === 'function') {
                         window.applyBHoverEffect(contentElement);
                     }
+                    // Initialize projects accordion if projects section was loaded
+                    if (section === 'projects') {
+                        setTimeout(() => {
+                            const projectItems = document.querySelectorAll('.project-item');
+                            projectItems.forEach(item => {
+                                const header = item.querySelector('.project-header');
+                                if (header && !header.dataset.listenerAdded) {
+                                    header.dataset.listenerAdded = 'true';
+                                    header.addEventListener('click', () => {
+                                        const isActive = item.classList.contains('active');
+                                        // Close all other items
+                                        document.querySelectorAll('.project-item').forEach(otherItem => {
+                                            if (otherItem !== item) {
+                                                otherItem.classList.remove('active');
+                                            }
+                                        });
+                                        // Toggle current item
+                                        if (isActive) {
+                                            item.classList.remove('active');
+                                        } else {
+                                            item.classList.add('active');
+                                        }
+                                    });
+                                }
+                            });
+                        }, 100);
+                    }
                     return; // Success, exit early
                 } else {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -486,6 +513,7 @@ class MarkdownLoader {
         }
     });
 })();
+
 
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
