@@ -746,6 +746,58 @@ html * {
     margin-top: 1rem;
 }
 
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+.project-item.active .project-links {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-accent);
+    border-radius: 0.5rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-link-button:hover {
+    background-color: var(--color-accent);
+    color: var(--color-global-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+.project-link-button:active {
+    transform: translateY(0);
+}
+
+.github-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+}
+
+.project-link-button:hover .github-icon {
+    stroke: var(--color-global-bg);
+}
+
 .project-close-button-container {
     display: flex;
     justify-content: center;
