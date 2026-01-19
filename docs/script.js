@@ -341,28 +341,6 @@ class MarkdownLoader {
                                             video.muted = true;
                                             video.play().catch(function(){});
                                         }
-                                        
-                                        // Smooth scroll to show the opened project header after dropdown opens
-                                        // Wait for the transition to progress before scrolling
-                                        setTimeout(() => {
-                                            const mainHeader = document.getElementById('main-header');
-                                            const headerHeight = mainHeader ? Math.ceil(mainHeader.getBoundingClientRect().height) : 0;
-                                            const extraMargin = 24; // Extra spacing below header for better visibility
-                                            
-                                            // Get the project item's position after it starts expanding
-                                            const itemRect = item.getBoundingClientRect();
-                                            const currentScrollY = window.pageYOffset || window.scrollY;
-                                            const itemTop = currentScrollY + itemRect.top;
-                                            
-                                            // Calculate target scroll position to show project header below fixed header
-                                            const targetPosition = itemTop - headerHeight - extraMargin;
-                                            
-                                            // Smooth scroll to show the project header
-                                            window.scrollTo({
-                                                top: Math.max(0, targetPosition),
-                                                behavior: 'smooth'
-                                            });
-                                        }, 300); // Wait for dropdown to start opening before scrolling
                                     }
                                 };
                                 
@@ -524,7 +502,7 @@ class MarkdownLoader {
     window.applyBHoverEffect = applyBHoverEffect;
 })();
 
-// Bee spawning when clicking on a 'b'/'B'
+// Bee spawning when clicking on a 'b'/'B' or name
 (function() {
     function spawnBeeFromElement(el) {
         const rect = el.getBoundingClientRect();
@@ -554,12 +532,43 @@ class MarkdownLoader {
         setTimeout(cleanup, 4000);
     }
 
+    // Make function globally accessible for name click handler
+    window.spawnBeeFromElement = spawnBeeFromElement;
+
+    // Click handler for 'b'/'B' letters
     document.addEventListener('click', (e) => {
         const target = e.target;
         if (target && target.classList && target.classList.contains('hover-b')) {
             spawnBeeFromElement(target);
         }
     });
+
+    // Click handler for name in header - always works on single click
+    function initNameBeeHandler() {
+        const headerTitle = document.querySelector('.header-title span');
+        if (headerTitle && !headerTitle.dataset.beeHandlerAdded) {
+            headerTitle.dataset.beeHandlerAdded = 'true';
+            
+            headerTitle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                spawnBeeFromElement(headerTitle);
+            });
+            
+            // Add cursor pointer to indicate it's clickable
+            headerTitle.style.cursor = 'pointer';
+        }
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNameBeeHandler);
+    } else {
+        initNameBeeHandler();
+    }
+
+    // Re-initialize after a short delay to ensure it works even if DOM loads slowly
+    setTimeout(initNameBeeHandler, 100);
+    setTimeout(initNameBeeHandler, 500);
 })();
 
 
@@ -580,6 +589,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof window.applyBHoverEffect === 'function') {
         window.applyBHoverEffect(document.body);
     }
+
+    // Re-initialize name bee handler after content loads (backup)
+    setTimeout(() => {
+        const headerTitle = document.querySelector('.header-title span');
+        if (headerTitle && !headerTitle.dataset.beeHandlerAdded && window.spawnBeeFromElement) {
+            headerTitle.dataset.beeHandlerAdded = 'true';
+            headerTitle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                window.spawnBeeFromElement(headerTitle);
+            });
+            headerTitle.style.cursor = 'pointer';
+        }
+    }, 200);
 
     // Initialize party hat explosion feature
     new PartyHatExplosion();
