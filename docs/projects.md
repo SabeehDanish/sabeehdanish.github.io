@@ -5,6 +5,34 @@
 <div class="project-item" data-project="0">
   <div class="project-header">
     <span class="project-number">01</span>
+    <h3 class="project-title">Custom Beyerdynamic Headphone Suspension System</h3>
+    <span class="project-toggle">+</span>
+  </div>
+  <div class="project-content">
+    <p class="project-description">I identified a significant ergonomic deficiency in my Beyerdynamic headphones during extended use. While a suspension strap solution existed from Capra Audio, the mounting geometry was fundamentally incompatible with my hardware. This required a redesign that could integrate a custom tension-fit strap into an existing mechanical assembly without compromising the structural integrity of the headband.
+    </p>
+    <div class="project-media-container">
+      <p class="concept-sketch-label">Concept Sketch</p>
+      <img src="assets/conceptdrawing.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
+      <p class="3d-model-label">3D CAD RENDER (SolidWorks)</p>
+      <img src="assets/solidworksteng.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
+    </div>
+    <div class="project-media-container">
+    <p class="Demo-label">DEMO</p>
+      <video src="assets/TENG Project.mp4" muted playsinline loop preload="metadata" class="project-video teng-video" aria-label="Project demo"></video>
+    </div>
+    <div class="project-skills">
+      <span class="tag tag-interpretability">AutoCAD</span>
+    </div>
+    <div class="project-close-button-container">
+      <button class="project-close-button" aria-label="Close project">−</button>
+    </div>
+  </div>
+</div>
+
+<div class="project-item" data-project="1">
+  <div class="project-header">
+    <span class="project-number">02</span>
     <h3 class="project-title">Triboelectric Nanogenerator</h3>
     <span class="project-toggle">+</span>
   </div>
@@ -29,9 +57,9 @@
   </div>
 </div>
 
-<div class="project-item" data-project="1">
+<div class="project-item" data-project="2">
   <div class="project-header">
-    <span class="project-number">02</span>
+    <span class="project-number">03</span>
     <h3 class="project-title">Streamlit Curve Fitting Application</h3>
     <span class="project-toggle">+</span>
   </div>
