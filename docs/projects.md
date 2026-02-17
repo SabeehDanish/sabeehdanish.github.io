@@ -18,11 +18,9 @@
       <img src="assets/CapraModel2.jpeg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
     </div>
     <div class="project-media-container">
-    <p class="Demo-label">DEMO</p>
-      <video src="assets/TENG Project.mp4" muted playsinline loop preload="metadata" class="project-video teng-video" aria-label="Project demo"></video>
     </div>
     <div class="project-skills">
-      <span class="tag tag-interpretability">AutoCAD</span>
+      <span class="tag tag-interpretability">3D Printing</span>
     </div>
     <div class="project-close-button-container">
       <button class="project-close-button" aria-label="Close project">−</button>
