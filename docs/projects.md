@@ -12,9 +12,9 @@
     <p class="project-description">I identified a significant ergonomic deficiency in my Beyerdynamic headphones during extended use. While a suspension strap solution existed from Capra Audio, the mounting geometry was fundamentally incompatible with my hardware. This required a redesign that could integrate a custom tension-fit strap into an existing mechanical assembly without compromising the structural integrity of the headband.
     </p>
     <div class="project-media-container">
-      <p class="concept-sketch-label">Concept Sketch</p>
+      <p class="concept-sketch-label">3D MODEL CONCEPT DESIGN (OrcaSlicer)</p>
       <img src="assets/CapraModel.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
-      <p class="3d-model-label">3D MODEL CONCEPT DESIGN (OrcaSlicer)</p>
+      <p class="3d-model-label">FINAL PRINT: 95A TPU</p>
       <img src="assets/CapraModel2.jpeg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
     </div>
     <div class="project-media-container">
