@@ -13,9 +13,9 @@
     </p>
     <div class="project-media-container">
       <p class="concept-sketch-label">3D MODEL CONCEPT DESIGN (OrcaSlicer)</p>
-      <img src="assets/CapraModel.jpg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
+      <img src="assets/CapraModel.jpg" alt="3D Model concept design" class="project-image project-image-capra" />
       <p class="3d-model-label">FINAL PRINT: 95A TPU</p>
-      <img src="assets/CapraModel2.jpeg" alt="Triboelectric Nanogenerator concept sketch" class="project-image" />
+      <img src="assets/CapraModel2.jpeg" alt="Final TPU print" class="project-image project-image-capra" />
     </div>
     <div class="project-media-container">
     </div>

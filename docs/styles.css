@@ -705,6 +705,13 @@ html * {
     display: block;
 }
 
+/* CapraModel images: show full image without cropping, limit size */
+.project-image-capra {
+    object-fit: contain;
+    max-height: 420px;
+    max-width: 100%;
+}
+
 /* Project video: no controls, seamless, works on mobile */
 .project-video {
     width: 100%;
